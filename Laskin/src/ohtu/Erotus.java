@@ -13,4 +13,10 @@ public class Erotus extends Komento {
         sovellus.miinus(this.getArvo());
         this.setArvo();
     }
+
+    @Override
+    protected void peru() {
+        sovellus.plus(this.getEdellinenArvo());
+        this.setArvo();
+    }
 }

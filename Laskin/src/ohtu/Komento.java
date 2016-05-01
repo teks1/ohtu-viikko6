@@ -7,8 +7,9 @@ public abstract class Komento {
     protected Sovelluslogiikka sovellus;
     protected JTextField tuloskentta;
     protected JTextField syotekentta;
+    protected int edellinenArvo;
 
-    public Komento(Sovelluslogiikka sovellus, JTextField syotekentta, JTextField tuloskentta) {
+    public Komento(Sovelluslogiikka sovellus, JTextField tuloskentta, JTextField syotekentta) {
         this.sovellus = sovellus;
         this.tuloskentta = tuloskentta;
         this.syotekentta = syotekentta;
@@ -21,7 +22,20 @@ public abstract class Komento {
             arvo = Integer.parseInt(syotekentta.getText());
         } catch (Exception e) {
         }
+        setEdellinenArvo(arvo);
         return arvo;
+    }
+
+    int getTulos() {
+        return sovellus.tulos();
+    }
+
+    int getEdellinenArvo() {
+        return edellinenArvo;
+    }
+
+    void setEdellinenArvo(int arvo) {
+        this.edellinenArvo = arvo;
     }
 
     void setArvo() {
@@ -31,5 +45,11 @@ public abstract class Komento {
         tuloskentta.setText("" + laskunTulos);
     }
 
+    void setTulos(int arvo) {
+        tuloskentta.setText("" + arvo);
+    }
+
     protected abstract void suorita();
+
+    protected abstract void peru();
 }

@@ -14,4 +14,10 @@ public class Summa extends Komento {
         this.setArvo();
     }
 
+    @Override
+    protected void peru() {
+        sovellus.miinus(this.getEdellinenArvo());
+        this.setArvo();
+    }
+
 }

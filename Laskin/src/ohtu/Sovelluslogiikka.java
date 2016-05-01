@@ -19,8 +19,4 @@ public class Sovelluslogiikka {
     public int tulos() {
         return tulos;
     }
-
-    public void aseta(int luku) {
-        tulos = luku;
-    }
 }
